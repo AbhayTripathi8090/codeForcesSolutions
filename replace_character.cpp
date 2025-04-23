@@ -1,57 +1,44 @@
-#include <bits/stdc++.h>
-using namespace std;
+    #include <bits/stdc++.h>
+    using namespace std;
 
-#define ll long long
-#define f(i, n) for (ll i = 0; i < n; i++)
+    #define ll long long
+    #define f(i, n) for (ll i = 0; i < n; i++)
 
-void solve()
-{
-    ll n;
-    cin >> n;
-    string s;
-    cin >> s;
-
-    unordered_map<char, int> mp;
-    for (auto i : s)
+    void solve()
     {
-        mp[i]++;
-    }
-    char maxChar,minChar;
-    int maxi = 0,mini = 11;
-    for (auto i : mp)
-    {
-        if (i.second > maxi)
+        ll n;
+        cin >> n;
+        string s;
+        cin >> s;
+
+        map<int, int> m;
+        for (int i = 0; i < n; i++)
         {
-            maxi = i.second;
-            maxChar = i.first;
+            m[s[i]]++;
         }
-        if (i.second < mini)
+        vector<pair<int, char>> v;
+        for (auto it : m)
         {
-            mini = i.second;
-            minChar = i.first;
+            v.push_back({it.second, it.first});
         }
+        sort(v.begin(), v.end());
+        // cout<<s.find(v[0].second)<<" ";
+        // cout<<v.back().second<<endl;
+        s[s.find(v[0].second)] = v.back().second;
+        cout << s << endl;
     }
-    for(int i=0;i<n;i++){
-        if(s[i] == minChar){
-            s[i] = maxChar;
-        }
-    }
-    // cout<<minChar<<" "<<maxChar;
-    cout<<s<<endl;
-    // cout<<endl;
-}
 
-int main()
-{
-    ios::sync_with_stdio(false);
-    cin.tie(nullptr);
-
-    int t;
-    cin >> t;
-    while (t--)
+    int main()
     {
-        solve();
-    }
+        ios::sync_with_stdio(false);
+        cin.tie(nullptr);
 
-    return 0;
-}
+        int t;
+        cin >> t;
+        while (t--)
+        {
+            solve();
+        }
+
+        return 0;
+    }
