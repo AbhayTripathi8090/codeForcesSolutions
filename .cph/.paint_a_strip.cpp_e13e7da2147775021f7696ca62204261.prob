@@ -1,0 +1,1 @@
+{"name":"Local: paint_a_strip","url":"c:\\Users\\abhay\\OneDrive\\Documents\\CP\\codeForcesSolutions\\paint_a_strip.cpp","tests":[{"id":1745515276252,"input":"4\n1\n2\n4\n20\n","output":"1\n2\n2\n4\n"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"c:\\Users\\abhay\\OneDrive\\Documents\\CP\\codeForcesSolutions\\paint_a_strip.cpp","group":"local","local":true}
