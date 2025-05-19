@@ -6,7 +6,7 @@ using namespace std;
 
 void solve()
 {
-    //answer - 1
+    // answer - 1
 
     // ll a, b, c;
     // cin >> a >> b >> c;
@@ -30,7 +30,7 @@ void solve()
     //     cout << "NO\n";
     // }
 
-    //answer - 2
+    // answer - 2
 
     // int n;
     // cin >> n;
@@ -121,9 +121,26 @@ void solve()
     //         (countA > countB) ? cout << "Alice" << endl : cout << "Bob" << endl;
     //         return;
     //     }
-        
+
     // }
     // (countA > countB) ? cout << "Alice" << endl : cout << "Bob" << endl;
+    ll n;
+    cin >> n;
+    string s;
+    cin >> s;
+    if (n == 2)
+    {
+        cout << (s[0] == 'A' ? "Alice\n" : "Bob\n");
+        return;
+    }
+    if (s[n - 1] == 'B')
+    {
+        int f = (s.find("B") == n - 1);
+        cout << (f ? "Alice\n" : "Bob\n");
+        return;
+    }
+    int f1 = (s[0] == 'B'), f2 = (s[n - 2] == 'B');
+    cout << ((f1 && f2) ? "Bob\n" : "Alice\n");
 }
 
 int main()
